@@ -1,4 +1,4 @@
-module.exports = function LetMeTarget(mod) {
+module.exports = function AutoTarget(mod) {
 	const Message = require('../tera-message')
 	const MSG = new Message(mod)
 	
@@ -16,7 +16,7 @@ module.exports = function LetMeTarget(mod) {
 	mod.command.add("heal", (arg) => {
 		if (!arg) {
 			mod.settings.autoLock = !mod.settings.autoLock;
-			MSG.chat('Let-Me-Target ' + (mod.settings.autoLock ? MSG.BLU("ON") : MSG.YEL("OFF")));
+			MSG.chat('Auto-Target ' + (mod.settings.autoLock ? MSG.BLU("ON") : MSG.YEL("OFF")));
 		} else if (arg === "auto") {
 			mod.settings.autoHeal = !mod.settings.autoHeal;
 			MSG.chat("autoHeal " + (mod.settings.autoHeal    ? MSG.BLU("Smart lock") : MSG.YEL("Back to normal")));
@@ -30,7 +30,7 @@ module.exports = function LetMeTarget(mod) {
 			mod.settings.autoCast = !mod.settings.autoCast;
 			MSG.chat("autoCast " + (mod.settings.autoCast ? MSG.BLU("ON") : MSG.YEL("OFF")));
 		} else {
-			MSG.chat("Let-Me-Target " + MSG.RED("wrong command!"))
+			MSG.chat("Auto-Target " + MSG.RED("wrong command!"))
 		}
 	});
 	/* 
