@@ -1,0 +1,17 @@
+{
+    "disableAutoUpdate" : false,
+	"name": "Auto-Target",
+    "options": {
+        "niceName": "Auto-Target",
+        "guiName": "Auto-Target",
+        "settingsFile": "config.json",
+        "settingsMigrator": "settings_migrator.js",
+        "settingsVersion": 2
+    },
+    "dependencies": {
+        "library": "https://raw.githubusercontent.com/tera-mod/tera-message/master/module.json"
+    },
+    "author": "PsykoDev",
+    "description": "Auto-Target",
+    "version": "97.03"
+}

@@ -1,0 +1,91 @@
+{
+    "version": 2,
+    "data": {
+        "autoLock": true,
+        "lockSpeed": 30,
+        "autoDPS": true,
+        "autoCleanse": true,
+        "autoHeal": true,
+        "hpCutoff": 98,
+        "autoCast": true,
+        "castSpeed": 100,
+        "skills": [
+            {
+                "group": 19,
+                "job": 6,
+                "type": "heal",
+                "dist": 35,
+                "targets": 4
+            },
+            {
+                "group": 37,
+                "job": 6,
+                "type": "heal",
+                "dist": 35,
+                "targets": 1
+            },
+            {
+                "group": 30,
+                "job": 6,
+                "type": "debuff",
+                "dist": 30
+            },
+            {
+                "group": 33,
+                "job": 6,
+                "type": "debuff",
+                "dist": 30
+            },
+            {
+                "group": 35,
+                "job": 6,
+                "type": "buff",
+                "dist": 25
+            },
+            {
+                "group": 5,
+                "job": 7,
+                "type": "heal",
+                "dist": 35,
+                "targets": 4
+            },
+            {
+                "group": 9,
+                "job": 7,
+                "type": "cleanse",
+                "dist": 35,
+                "targets": 4
+            },
+            {
+                "group": 24,
+                "job": 7,
+                "type": "debuff",
+                "dist": 30
+            },
+            {
+                "group": 28,
+                "job": 7,
+                "type": "debuff",
+                "dist": 30
+            },
+            {
+                "group": 41,
+                "job": 7,
+                "type": "dps",
+                "dist": 30
+            },
+            {
+                "group": 2,
+                "job": 5,
+                "type": "dps",
+                "dist": 35
+            },
+            {
+                "group": 20,
+                "job": 4,
+                "type": "dps",
+                "dist": 35
+            }
+        ]
+    }
+}
