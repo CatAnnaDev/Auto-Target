@@ -8,7 +8,7 @@ module.exports = function AutoTarget(mod) {
 		ownX = null,
 		ownY = null,
 		ownZ = null,
-		
+		debug = false,
 		locking = false,
 		partyMembers = [],
 		bossInfo = [];
@@ -26,28 +26,34 @@ module.exports = function AutoTarget(mod) {
 		} else if (arg === "dps") {
 			mod.settings.autoDPS = !mod.settings.autoDPS;
 			MSG.chat("autoDPS " + (mod.settings.autoDPS     ? MSG.BLU("Smart lock") : MSG.YEL("Back to normal")));
-		} else if (arg === "cast") {
+		} else if (arg === 'debug') {
+			mod.settings.debug = !mod.settings.debug;
+			MSG.chat("Auto heal Debug " + (mod.settings.debug     ? MSG.BLU("Debug on") : MSG.YEL("Debug off")));
+		}else if (arg === 'test') {
+			outputDebug(0);
+            return;
+        } else if (arg === "cast") {
 			mod.settings.autoCast = !mod.settings.autoCast;
 			MSG.chat("autoCast " + (mod.settings.autoCast ? MSG.BLU("ON") : MSG.YEL("OFF")));
 		} else {
 			MSG.chat("Auto-Target " + MSG.RED("wrong command!"))
 		}
 	});
-	/* 
-	command.add('l1', () => {
+	/*
+	mod.command.add('l1', () => {
 		sortDistBoss();
 		MSG.chat(JSON.stringify(bossInfo, null, 4));
 	});
 	
-	command.add('l2', () => {
+	mod.command.add('l2', () => {
 		sortHp();
 		MSG.chat(JSON.stringify(partyMembers, null, 4));
 	});
-	 */
+		*/
 	mod.game.on('enter_game', () => {
 		job = (mod.game.me.templateId - 10101) % 100;
 	});
-	
+
 	mod.hook('C_PLAYER_LOCATION', 5, { order: -10 }, (event) => {
 		ownX = (event.loc.x + event.dest.x) / 2;
 		ownY = (event.loc.y + event.dest.y) / 2;
@@ -216,6 +222,12 @@ module.exports = function AutoTarget(mod) {
 				}
 			}
 		}
+		let targetMembers = [];
+
+		if (targetMembers.length > 0) {
+			if (mod.settings.debug) outputDebug(event.skill);
+			
+		}
 		
 		switch (packetSkillInfo.type) {
 			case 'heal':
@@ -229,7 +241,7 @@ module.exports = function AutoTarget(mod) {
 						if (distance > packetSkillInfo.dist) continue;
 						if (qtdTarget > packetSkillInfo.targets) continue;
 						
-						if (member.curHp > 0 && member.hpP < (mod.settings.hpCutoff / 100)) {
+						if (member.curHp > 1 && member.hpP < (mod.settings.hpCutoff / 100)) {
 							let newEvent = {
 								target: member.gameId,
 								unk: 0,
@@ -344,4 +356,22 @@ module.exports = function AutoTarget(mod) {
 	function checkDistance(x, y, z, x1, y1, z1) {
 		return (Math.sqrt(Math.pow(x1 - x, 2) + Math.pow(y1 - y, 2) + Math.pow(z1 - z, 2))) / 25;
 	}
+
+	function outputDebug(skill) {
+        let out = '\nAutoheal Debug... Skill: ' + skill.id + '\tpartyMemebers.length: ' + partyMembers.length;
+        for (let i = 0; i < partyMembers.length; i++) {
+            out += '\n' + i + '\t';
+            let name = partyMembers[i].name;
+            name += ' '.repeat(21-name.length);
+            let hp = '\tHP: ' + parseFloat(partyMembers[i].hpP).toFixed(2);
+            let dist = '\tundefined';
+            if (partyMembers[i].loc) dist = '\tDist: ' + (partyMembers[i].loc.dist3D(playerLocation.loc) / 25).toFixed(2);
+           // let vert = '\tVert: ' + (Math.abs(partyMembers[i].loc.z - playerLocation.loc.z) / 25).toFixed(2);
+            let online = '\tOnline: ' + partyMembers[i].online;
+            let alive = '\tAlive: ' + partyMembers[i].alive;
+            let pid = '\tpid: ' + partyMembers[i].playerId + '  gid: ' + partyMembers[i].gameId  ;
+            out += name + hp + dist + online + alive + pid;
+        }
+        console.log(out)
+    }
 }

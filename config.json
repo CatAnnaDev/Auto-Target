@@ -1,5 +1,5 @@
 {
-    "version": 2,
+    "version": 2.1,
     "data": {
         "autoLock": true,
         "lockSpeed": 30,
@@ -9,6 +9,7 @@
         "hpCutoff": 98,
         "autoCast": true,
         "castSpeed": 100,
+        "debug": true,
         "skills": [
             {
                 "group": 19,

@@ -1,8 +1,12 @@
 {
     "files": {
-        "index.js": "aa0a298cf0c4e8a4875583769afb317d78de0a1934c9b641a94eea2d612893a6",
-        "module.json": "a44de54b5664a4b9d070f3240cc112d57556f66209a57b568e3a74a8ae557368",
-        "settings_migrator.js": "69083d3e6181edc256a5106b0f98e5f8b66874c3b6c45119316757fd8bb50461"
+        "config.json": {
+            "overwrite": false,
+            "hash": "3d592b3a3d1d17400e69bdbf45c9f45a9fedd81ae47da3653b47cb90e51faa0f"
+        },
+        "index.js": "93895c0603517fbc35a327c04b71425cd06f344dbf0913efbfd4a93906e476a8",
+        "module.json": "e214d54f9ea257417e4bd440d1b33f8604889e5f146da3af457b9164074c2a2d",
+        "settings_migrator.js": "0be99f637e9f0e4748a06472378dc4d3e7dc0c66b30bd13da6f188ff2b4d3e8c"
     },
     "defs": {
         "C_CANCEL_SKILL": 3,

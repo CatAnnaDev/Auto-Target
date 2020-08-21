@@ -10,5 +10,7 @@ updated for 97.03 EU / NA   || tera-message is requiere
   - Toggle on/off
 - __auto-dps  : `dps`__
   - Toggle on/off
-  - __auto-cast  : `cast`__
+- __auto-cast  : `cast`__
   - Toggle on/off
+- __auto-debug  : `debug`__
+  - Toggle on/off  

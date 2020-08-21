@@ -7,6 +7,7 @@ const DefaultSettings = {
     "hpCutoff":       97, // (healing only) ignore members that have more HP% than this
     "autoCast":     true, // true = skills auto lockon and cast. false = pre-lockon onto targets and casting is done manually
     "castSpeed":     100, // delay for casting skills. castSpeed needs to be greater than lockSpeed.
+    "debug":        false,
     "skills": [
         // 祭师
         {group: 19, job: 6, type: 'heal',    dist: 35, targets: 4}, // 治癒之光-治疗-最大距离-最大目标数量
