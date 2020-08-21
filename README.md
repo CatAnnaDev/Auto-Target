@@ -1,5 +1,5 @@
 ## Auto-Target
-updated for 97.03 EU / NA   || tera-message is requiere 
+updated for 97.03 EU / NA   || tera-message is requiere https://github.com/tera-mod/tera-message
 
 ## Usage
 - __`heal`__
