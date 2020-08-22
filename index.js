@@ -222,16 +222,11 @@ module.exports = function AutoTarget(mod) {
 				}
 			}
 		}
-		let partyMembers = [];
-
-		if (partyMembers.length > 0) {
-			if (mod.settings.debug) outputDebug(event.skill);
-			
-		}
 		
 		switch (packetSkillInfo.type) {
 			case 'heal':
 				if (mod.settings.autoHeal && partyMembers && partyMembers.length > 0) {
+					if (mod.settings.debug) outputDebug(event.skill);
 					sortHp();
 					let qtdTarget = 0;
 					locking = true;
