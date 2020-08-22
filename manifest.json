@@ -4,9 +4,10 @@
             "overwrite": false,
             "hash": "3d592b3a3d1d17400e69bdbf45c9f45a9fedd81ae47da3653b47cb90e51faa0f"
         },
-        "index.js": "93895c0603517fbc35a327c04b71425cd06f344dbf0913efbfd4a93906e476a8",
+        "index.js": "75172b70e866fd195959f7e268748bd44455625e084510a45df53ef6db42af48",
         "module.json": "e214d54f9ea257417e4bd440d1b33f8604889e5f146da3af457b9164074c2a2d",
-        "settings_migrator.js": "0be99f637e9f0e4748a06472378dc4d3e7dc0c66b30bd13da6f188ff2b4d3e8c"
+        "settings_migrator.js": "0be99f637e9f0e4748a06472378dc4d3e7dc0c66b30bd13da6f188ff2b4d3e8c",
+        "lib.js": "6f6a273bc8d4ac90ea01230b2dd9a8596983577a43bdb0838386916630c46037"
     },
     "defs": {
         "C_CANCEL_SKILL": 3,

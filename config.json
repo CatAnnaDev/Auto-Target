@@ -9,7 +9,7 @@
         "hpCutoff": 98,
         "autoCast": true,
         "castSpeed": 100,
-        "debug": true,
+        "debug": false,
         "skills": [
             {
                 "group": 19,

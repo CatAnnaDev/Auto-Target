@@ -1,5 +1,5 @@
 module.exports = function AutoTarget(mod) {
-	const Message = require('../tera-message')
+	const Message = require('./lib.js')
 	const MSG = new Message(mod)
 	
 	const skills = mod.settings.skills;
