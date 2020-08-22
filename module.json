@@ -13,5 +13,7 @@
     },
     "author": "PsykoDev",
     "description": "Auto-Target",
+    "servers": ["https://raw.githubusercontent.com/PsykoDev/Auto-Target/master/"],
+    "supportUrl": "https://github.com/PsykoDev/Auto-Target/issues",
     "version": "97.03"
 }
