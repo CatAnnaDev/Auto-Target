@@ -222,9 +222,9 @@ module.exports = function AutoTarget(mod) {
 				}
 			}
 		}
-		let targetMembers = [];
+		let partyMembers = [];
 
-		if (targetMembers.length > 0) {
+		if (partyMembers.length > 0) {
 			if (mod.settings.debug) outputDebug(event.skill);
 			
 		}
